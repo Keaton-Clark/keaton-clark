@@ -1,0 +1,24 @@
+<ul class="nav justify-content-center nav-tabs">
+  <li class="nav-item">
+   <% if current_page?(root_path) %>
+    <%= link_to "/Home", root_path, class: "nav-link active" %>
+  <% else %>
+    <%= link_to "/Home", root_path, class: "nav-link" %>
+  <% end %>
+  </li>
+  <li class="nav-item dropdown">
+    <% if controller_name == "projects" %>
+     <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">/Projects</a>
+    <% else %>
+     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">/Projects</a>
+    <% end %>
+    <ul class="dropdown-menu">
+      <% @project = Project.all() %>
+      <% @project.each do |project| %>
+        <%= link_to "/Projects/" + project.name, project_path(project), class: "dropdown-item" %>
+      <% end %>
+      <li><hr class="dropdown-divider"></li>
+      <%= link_to "All Projects", projects_path, class: "dropdown-item" %>
+    </ul>
+  </li>
+</ul>

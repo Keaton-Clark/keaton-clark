@@ -1,0 +1,18 @@
+<div class="container py-4">
+  <header class="pb-3 mb-4 border-bottom">
+    <div class="d-flex align-items-center text-dark text-decoration-none">
+      <span class="fs-4"><%= @project.name %></span>
+    </div>
+  </header>
+
+  <div class="p-5 mb-4 bg-light rounded-6">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+      <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+    </div>
+    <hr>
+      <%= link_to "Check it out", @project.url, class: "btn btn-large btn-light" %>
+  </div>
+</div>
+
+

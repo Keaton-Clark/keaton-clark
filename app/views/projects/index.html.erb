@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="d-flex flex-wrap justify-content-center ">
+  <% @projects.each do |project| %>
+    <div class="card" style="width: 25%;">
+      <%= image_tag(project.name + ".png", class:"d-block") rescue image_tag("default.jpg", class:"d-block")%>
+      <div class="card-body">
+        <%= link_to project.name, project, class:"btn btn-light"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
