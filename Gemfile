@@ -8,6 +8,7 @@ gem 'rails', '~> 6.1.5'
 gem 'irb'
 gem 'rdoc'
 gem 'git'
+gem 'redcarpet'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server

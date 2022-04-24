@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     dir = "app/assets/repos/" + @project.name
     FileUtils.remove_dir(dir) if File.directory?(dir)
     @git = Git.clone(@project.url, dir)
+    @readme = File.open(dir + "/README.md").read
   end
 
 
