@@ -14,6 +14,9 @@
     <hr>
       <%= link_to "Check it out", @project.url, class: "btn btn-large btn-light" %>
   </div>
+  <% if File.file?("app/views/projects/_" + @project.name + ".html.erb") %>
+    <%= render @render %>
+  <% end %>
 </div>
 
 

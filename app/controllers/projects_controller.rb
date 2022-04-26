@@ -8,10 +8,11 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
-    dir = "app/assets/repos/" + @project.name
-    FileUtils.remove_dir(dir) if File.directory?(dir)
-    @git = Git.clone(@project.url, dir)
-    @readme = File.open(dir + "/README.md").read
+    @dir = "app/assets/repos/" + @project.name
+    FileUtils.remove_dir(@dir) if File.directory?(@dir)
+    @git = Git.clone(@project.url, @dir)
+    @readme = File.open(@dir + "/README.md").read
+    @render = "projects/" + @project.name
   end
 
 

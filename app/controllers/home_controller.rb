@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def about
-    @aboutme = File.open("app/views/home/ABOUTME.md").read
+    @project = Project.find_by_name("Keaton-Clark")
+    dir = "app/assets/repos/" + @project.name
+    @readme = File.open(dir + "/README.md").read
   end
 end
